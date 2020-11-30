@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map for 107-Arduino-Debug
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+ArduinoDebug	KEYWORD1
+DEBUG_INSTANCE	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+DBG_ERROR	KEYWORD2
+DBG_WARNING	KEYWORD2
+DBG_INFO	KEYWORD2
+DBG_DEBUG	KEYWORD2
+DBG_VERBOSE	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DBG_ENABLE_ERROR	LITERAL1
+DBG_ENABLE_WARNING	LITERAL1
+DBG_ENABLE_INFO	LITERAL1
+DBG_ENABLE_DEBUG	LITERAL1
+DBG_ENABLE_VERBOSE	LITERAL1
