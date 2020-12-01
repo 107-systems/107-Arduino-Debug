@@ -2,7 +2,7 @@
 =================
 
 <p align="center">
-  <a href="https://github.com/107-systems/107-Arduino-Viper"><img src="https://github.com/107-systems/.github/raw/main/viper-logo.jpg" width="40%"></a>
+  <a href="https://github.com/107-systems/107-Arduino-Viper"><img src="https://github.com/107-systems/.github/raw/main/logo/viper.jpg" width="40%"></a>
 </p>
 
 Arduino library for providing convenient macros for printf-style debugging.
