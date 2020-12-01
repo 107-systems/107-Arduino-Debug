@@ -26,43 +26,33 @@
  **************************************************************************************/
 
 #ifdef DBG_ENABLE_ERROR
-#  ifndef DBG_ERROR
-#    define DBG_ERROR(fmt, ...) Debug.print(DebugLevel::Error, fmt, ## __VA_ARGS__)
+#  define DBG_ERROR(fmt, ...) Debug.print(DebugLevel::Error, fmt, ## __VA_ARGS__)
 #else
-#    define DBG_ERROR(fmt, ...)
-#  endif
+#  define DBG_ERROR(fmt, ...)
 #endif
 
 #ifdef DBG_ENABLE_WARNING
-#  ifndef DBG_WARNING
-#    define DBG_WARNING(fmt, ...) Debug.print(DebugLevel::Warning, fmt, ## __VA_ARGS__)
-#  else
-#    define DBG_WARNING(fmt, ...)
-#  endif
+#  define DBG_WARNING(fmt, ...) Debug.print(DebugLevel::Warning, fmt, ## __VA_ARGS__)
+#else
+#  define DBG_WARNING(fmt, ...)
 #endif
 
 #ifdef DBG_ENABLE_INFO
-#  ifndef DBG_INFO
-#    define DBG_INFO(fmt, ...) Debug.print(DebugLevel::Info, fmt, ## __VA_ARGS__)
-#  else
-#    define DBG_INFO(fmt, ...)
-#  endif
+#  define DBG_INFO(fmt, ...) Debug.print(DebugLevel::Info, fmt, ## __VA_ARGS__)
+#else
+#  define DBG_INFO(fmt, ...)
 #endif
 
 #ifdef DBG_ENABLE_DEBUG
-#  ifndef DBG_DEBUG
-#    define DBG_DEBUG(fmt, ...) Debug.print(DebugLevel::Debug, fmt, ## __VA_ARGS__)
-#  else
-#    define DBG_DEBUG(fmt, ...)
-#  endif
+#  define DBG_DEBUG(fmt, ...) Debug.print(DebugLevel::Debug, fmt, ## __VA_ARGS__)
+#else
+#  define DBG_DEBUG(fmt, ...)
 #endif
 
 #ifdef DBG_ENABLE_VERBOSE
-#  ifndef DBG_VERBOSE 
-#    define DBG_VERBOSE(fmt, ...) Debug.print(DebugLevel::Verbose, fmt, ## __VA_ARGS__)
-#  else
-#    define DBG_VERBOSE(fmt, ...)
-#  endif
+#  define DBG_VERBOSE(fmt, ...) Debug.print(DebugLevel::Verbose, fmt, ## __VA_ARGS__)
+#else
+#  define DBG_VERBOSE(fmt, ...)
 #endif
 
 /**************************************************************************************
