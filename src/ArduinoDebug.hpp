@@ -103,11 +103,11 @@ private:
   {
     switch(lvl)
     {
-    case DebugLevel::Error:   print("[ERROR  ] "); break;
-    case DebugLevel::Warning: print("[WARNING] "); break;
-    case DebugLevel::Info:    print("[INFO   ] "); break;
-    case DebugLevel::Debug:   print("[DEBUG  ] "); break;
-    case DebugLevel::Verbose: print("[VERBOSE] "); break;
+    case DebugLevel::Error:   print("[E] "); break;
+    case DebugLevel::Warning: print("[W] "); break;
+    case DebugLevel::Info:    print("[I] "); break;
+    case DebugLevel::Debug:   print("[D] "); break;
+    case DebugLevel::Verbose: print("[V] "); break;
     }
   }
 
