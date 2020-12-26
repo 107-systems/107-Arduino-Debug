@@ -23,7 +23,7 @@ void setup()
   Serial.begin(9600);
   while (!Serial) { }
 
-  DBG_ERROR  ("A serious error has occured during operation X: %d", -42);
+  DBG_ERROR  ("A serious error has occurred during operation X: %d", -42);
   DBG_WARNING("No connection to %s, retrying in %d seconds ...", "127.0.0.1", 5);
   DBG_INFO   ("Did you know you can also print octal values: %o", 0xCA);
   DBG_DEBUG  ("MCP2515 CANSTAT = 0x%02X", 0xFE);
