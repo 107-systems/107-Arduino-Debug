@@ -1,5 +1,9 @@
 107-Arduino-Debug
 =================
+[![Compile Examples](https://github.com/107-systems/107-Arduino-Debug/workflows/Compile%20Examples/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=Compile+Examples)
+[![Extra Library Checks](https://github.com/107-systems/107-Arduino-Debug/workflows/Extra%20Library%20Checks/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=Extra+Library+Checks)
+[![General Formatting Checks](https://github.com/107-systems/107-Arduino-Debug/workflows/General%20Formatting%20Checks/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=General+Formatting+Checks)
+[![Spell Check](https://github.com/107-systems/107-Arduino-Debug/workflows/Spell%20Check/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=Spell+Check)
 
 <p align="center">
   <a href="https://github.com/107-systems/Viper-Firmware"><img src="https://github.com/107-systems/.github/raw/main/logo/viper.jpg" width="40%"></a>
