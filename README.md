@@ -1,7 +1,8 @@
 107-Arduino-Debug
 =================
 [![Compile Examples](https://github.com/107-systems/107-Arduino-Debug/workflows/Compile%20Examples/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=Compile+Examples)
-[![Extra Library Checks](https://github.com/107-systems/107-Arduino-Debug/workflows/Extra%20Library%20Checks/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=Extra+Library+Checks)
+[![Check Arduino](https://github.com/107-systems/107-Arduino-Debug/actions/workflows/check-arduino.yml/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions/workflows/check-arduino.yml)
+[![Check keywords.txt](https://github.com/107-systems/107-Arduino-Debug/actions/workflows/check-keywords-txt.yml/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions/workflows/check-keywords-txt.yml)
 [![General Formatting Checks](https://github.com/107-systems/107-Arduino-Debug/workflows/General%20Formatting%20Checks/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=General+Formatting+Checks)
 [![Spell Check](https://github.com/107-systems/107-Arduino-Debug/workflows/Spell%20Check/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=Spell+Check)
 
