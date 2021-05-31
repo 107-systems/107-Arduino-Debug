@@ -1,5 +1,6 @@
-107-Arduino-Debug
-=================
+<a href="https://107-systems.org/"><img align="right" src="https://raw.githubusercontent.com/107-systems/.github/main/logo/107-systems.png" width="15%"></a>
+`107-Arduino-Debug`
+===================
 [![Arduino Library Badge](https://www.ardu-badge.com/badge/107-Arduino-Debug.svg?)](https://www.ardu-badge.com/107-Arduino-Debug)
 [![Compile Examples](https://github.com/107-systems/107-Arduino-Debug/workflows/Compile%20Examples/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions?workflow=Compile+Examples)
 [![Check Arduino](https://github.com/107-systems/107-Arduino-Debug/actions/workflows/check-arduino.yml/badge.svg)](https://github.com/107-systems/107-Arduino-Debug/actions/workflows/check-arduino.yml)
