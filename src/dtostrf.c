@@ -17,7 +17,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#if !defined(ARDUINO_ARCH_MBED)
+#if defined(ARDUINO_ARCH_SAMD)
 
 #include <stdio.h>
 
@@ -31,4 +31,4 @@ char *dtostrf (double val, signed char width, unsigned char prec, char *sout)
   return sout;
 }
 
-#endif /* !defined(ARDUINO_ARCH_MBED) */
+#endif /* defined(ARDUINO_ARCH_SAMD) */

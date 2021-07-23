@@ -11,14 +11,6 @@ on:
       - ".github/workflows/compile-examples.yml"
       - "examples/**"
       - "src/**"
-  # Scheduled trigger checks for breakage caused by changes to external resources (libraries, platforms)
-  schedule:
-    # run every Saturday at 3 AM UTC
-    - cron: "0 3 * * 6"
-  # See: https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#workflow_dispatch
-  workflow_dispatch:
-  # See: https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#repository_dispatch
-  repository_dispatch:
 
 jobs:
   build:
@@ -32,40 +24,71 @@ jobs:
 
       matrix:
         board:
-          - fqbn: arduino:samd:arduino_zero_edbg
           - fqbn: arduino:samd:mkr1000
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrzero
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrwifi1010
-          - fqbn: arduino:samd:nano_33_iot
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrfox1200
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrwan1300
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrwan1310
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrgsm1400
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrnb1500
+            platforms: |
+              - name: arduino:samd
           - fqbn: arduino:samd:mkrvidor4000
-          - fqbn: arduino:mbed:envie_m7
-          - fqbn: arduino:mbed:envie_m4
-          - fqbn: arduino:mbed:nano33ble
+            platforms: |
+              - name: arduino:samd
+          - fqbn: arduino:mbed_portenta:envie_m7
+            platforms: |
+              - name: arduino:mbed_portenta
+          - fqbn: arduino:mbed_portenta:envie_m4
+            platforms: |
+              - name: arduino:mbed_portenta
+          - fqbn: arduino:mbed_nano:nano33ble
+            platforms: |
+              - name: arduino:mbed_nano
+          - fqbn: arduino:mbed_nano:nanorp2040connect
+            platforms: |
+              - name: arduino:mbed_nano
+          - fqbn: arduino:mbed_edge:edge_control
+            platforms: |
+              - name: arduino:mbed_edge
+          - fqbn: esp32:esp32:esp32
+            platforms: |
+              - name: esp32:esp32
+                source-url: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install ESP32 platform dependencies
+        if: startsWith(matrix.board.fqbn, 'esp32:esp32')
+        run: pip3 install pyserial
+
       - name: Compile examples
         uses: arduino/compile-sketches@main
         with:
           fqbn: ${{ matrix.board.fqbn }}
-          libraries: |
-            # Install the library from the local path.
-            - source-path: ./
-            # Additional library dependencies can be listed here.
-            # See: https://github.com/arduino/compile-sketches#libraries
-          sketch-paths: |
-            - ./examples/
+          platforms: ${{ matrix.board.platforms }}
           enable-deltas-report: true
           sketches-report-path: ${{ env.SKETCHES_REPORTS_PATH }}
 
       - name: Save memory usage change report as artifact
+        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.SKETCHES_REPORTS_PATH }}
