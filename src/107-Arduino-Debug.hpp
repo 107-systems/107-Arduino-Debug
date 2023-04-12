@@ -76,7 +76,7 @@ public:
 
   ArduinoDebug(Stream & stream) : _stream{stream} { }
 
-  void print(DebugLevel const lvl, char * fmt, ...)
+  void print(DebugLevel const lvl, char const * fmt, ...)
   {
     print(lvl);
 
