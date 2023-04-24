@@ -18,6 +18,8 @@ DBG_WARNING	KEYWORD2
 DBG_INFO	KEYWORD2
 DBG_DEBUG	KEYWORD2
 DBG_VERBOSE	KEYWORD2
+prettyPrintOn	KEYWORD2
+prettyPrintOff	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
