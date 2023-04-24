@@ -74,7 +74,13 @@ class ArduinoDebug
 
 public:
 
-  ArduinoDebug(Stream & stream) : _stream{stream} { }
+  ArduinoDebug(Stream & stream)
+  : _stream{stream}
+  , _is_output_coloured{false}
+  { }
+
+  void prettyPrintOn () { _is_output_coloured = true; }
+  void prettyPrintOff() { _is_output_coloured = false; }
 
   void print(DebugLevel const lvl, char const * fmt, ...)
   {
@@ -91,6 +97,7 @@ public:
 private:
 
   Stream & _stream;
+  bool _is_output_coloured;
 
   void print(char const * fmt, va_list args)
   {
@@ -103,11 +110,11 @@ private:
   {
     switch(lvl)
     {
-    case DebugLevel::Error:   print("[E] "); break;
-    case DebugLevel::Warning: print("[W] "); break;
-    case DebugLevel::Info:    print("[I] "); break;
-    case DebugLevel::Debug:   print("[D] "); break;
-    case DebugLevel::Verbose: print("[V] "); break;
+      case DebugLevel::Error:   _is_output_coloured ? print("\033[31m[E]\033[0m ") : print("[E] "); break;
+      case DebugLevel::Warning: _is_output_coloured ? print("\033[33m[W]\033[0m ") : print("[W] "); break;
+      case DebugLevel::Info:    _is_output_coloured ? print("\033[32m[I]\033[0m ") : print("[I] "); break;
+      case DebugLevel::Debug:   print("[D] "); break;
+      case DebugLevel::Verbose: print("[V] "); break;
     }
   }
 
