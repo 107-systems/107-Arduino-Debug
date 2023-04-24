@@ -44,3 +44,7 @@ void setup()
 }
 /* ... */
 ```
+**Note**: If you enable pretty printing using 4-bit shell color escape sequences via `prettyPrintOn` then you'll need to start `minicom` with `--color=on`:
+```bash
+minicom -D /dev/ttyACM0 --color=on
+```
